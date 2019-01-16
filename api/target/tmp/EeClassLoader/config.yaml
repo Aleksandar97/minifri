@@ -1,0 +1,45 @@
+kumuluzee:
+  name: rest
+  version: 1.0.0
+  env:
+    name: dev
+  datasources:
+  - jndi-name: jdbc/kpdb
+    connection-url: jdbc:postgresql://ec2-174-129-25-182.compute-1.amazonaws.com:5432/d7edhqtr3bao2d?sslmode=require
+    #spremeni ip
+    #default -> connection-url: jdbc:postgresql://localhost:5432/postgres
+    username: xadujfxfytasdr
+    password: 575973ef1e1bbb2f5dcf5c1753bed4166df6461bac4df6fd1fb3111ea6343f32
+    max-pool-size: 20
+  server:
+    base-url: http://localhost:8080
+    # server context path (defaults to /)
+    # force HTTPS (disabled by default)
+    force-https: false
+    http:
+      # enable HTTP/2 (disabled by default)
+      http2: true
+    https:
+      # enable HTTPS
+      enabled: true
+      # HTTPS port (default to 8443)
+      port: 8443
+      # enable HTTPS
+      http2: true
+      # absolute path of the keystore file that contains the server certificate/key (defaults to javax.net.ssl.keyStore
+      # system property value)
+      keystore-path: api/src/main/resources/SSL/keystore.jks
+      # keystore password (defaults to javax.net.ssl.keyStorePassword system propery value)
+      keystore-password: password
+      # certificate/key alias
+      key-alias: test
+      # certificate/key password
+      key-password: password
+      # comma separated list of supported SSL protocols
+      ssl-protocols: TLSv1.1,TLSv1.2
+      # comma separated list of supported SSL ciphers
+      ssl-ciphers: >
+        TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384,
+        TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+        TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,
+        TLS_DHE_RSA_WITH_AES_128_CBC_SHA256
